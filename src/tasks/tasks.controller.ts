@@ -23,7 +23,7 @@ export class TasksController {
 
 	@Get()
 	//** タスクを絞り込んで取得 */
-	getTasks(@Query() filterDto: GetTasksFilterDto): Task[] {
+	getTasks(@Query(ValidationPipe) filterDto: GetTasksFilterDto): Task[] {
 		if (Object.keys(filterDto).length) {
 			return this.tasksService.getTasksWithFilters(filterDto);
 		} else {
@@ -50,7 +50,7 @@ export class TasksController {
 	}
 
 	@Patch('/:id/status')
-	//** タスク更新 */
+	//** タスクの状態を更新 */
 	updateTaskStatus(
 		@Param('id') id: string,
 		@Body('status', TaskStatusValidationPipe) status: TaskStatus
