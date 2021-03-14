@@ -4872,12 +4872,17 @@
         "affectsGlobalScope": false
       },
       "../src/auth/auth.controller.ts": {
-        "version": "6589a7381ec0db8d1418eaf7bc97540b0e9762ad733fa94974b2daea112c536e",
-        "signature": "41e0ad0bd687cf34abd37aa57c012043b60a3dfe6fbe01775e5b2da75a2054c4",
+        "version": "e2f0e1c31b57f570c175b99c3ddcebe7dc3cd151b2dc661216235ca1c580ddd4",
+        "signature": "0c860eeaf228f9963888f1ae962e36d72d02839a7ec9866773793c89043d9533",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/jwt.strategy.ts": {
+        "version": "35be078cd8fb978319eeff78b5442a56ba842c7abc84fb1408669585915bafb9",
+        "signature": "fe62f2976bc06137b6e46a146f9fa7c2f60627cee97305cb165ac000b8d26351",
         "affectsGlobalScope": false
       },
       "../src/auth/auth.module.ts": {
-        "version": "5855d6c3d5a41376ed501606ff6fdec979453925dc2795a0800b2274f096d4b5",
+        "version": "e129ea73ac41f2dbe49fa4fdc254bd375640118615c2f58d7fbf65e3bb197f53",
         "signature": "a28b5c0c372fb375910b3fe3c3ce4331509bc18ccef7cc39c9ee9d8daf8225d1",
         "affectsGlobalScope": false
       },
@@ -7229,6 +7234,7 @@
       ],
       "../src/auth/auth.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/passport/index.d.ts",
         "../src/auth/auth.service.ts",
         "../src/auth/dto/auth-credentials.dto.ts"
       ],
@@ -7239,6 +7245,7 @@
         "../node_modules/@nestjs/passport/index.d.ts",
         "../src/auth/auth.controller.ts",
         "../src/auth/auth.service.ts",
+        "../src/auth/jwt.strategy.ts",
         "../src/auth/user.repository.ts"
       ],
       "../src/auth/auth.service.ts": [
@@ -7251,6 +7258,13 @@
       ],
       "../src/auth/dto/auth-credentials.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/auth/jwt.strategy.ts": [
+        "../../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/passport/index.d.ts",
+        "../src/auth/jwt-payload.interface.ts",
+        "../src/auth/user.repository.ts"
       ],
       "../src/auth/user.entity.ts": [
         "../../node_modules/typeorm/index.d.ts"
@@ -11171,6 +11185,11 @@
         "../src/auth/dto/auth-credentials.dto.ts",
         "../src/auth/user.repository.ts"
       ],
+      "../src/auth/jwt.strategy.ts": [
+        "../src/auth/jwt-payload.interface.ts",
+        "../src/auth/user.entity.ts",
+        "../src/auth/user.repository.ts"
+      ],
       "../src/auth/user.entity.ts": [
         "../../node_modules/typeorm/index.d.ts"
       ],
@@ -13765,6 +13784,7 @@
       "../src/auth/auth.service.ts",
       "../src/auth/dto/auth-credentials.dto.ts",
       "../src/auth/jwt-payload.interface.ts",
+      "../src/auth/jwt.strategy.ts",
       "../src/auth/user.entity.ts",
       "../src/auth/user.repository.ts",
       "../src/config/typeorm.config.ts",

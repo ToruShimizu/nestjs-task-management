@@ -17,6 +17,9 @@ const common_1 = require("@nestjs/common");
 const common_2 = require("@nestjs/common");
 const common_3 = require("@nestjs/common");
 const common_4 = require("@nestjs/common");
+const common_5 = require("@nestjs/common");
+const common_6 = require("@nestjs/common");
+const passport_1 = require("@nestjs/passport");
 const auth_service_1 = require("./auth.service");
 const auth_credentials_dto_1 = require("./dto/auth-credentials.dto");
 let AuthController = class AuthController {
@@ -29,23 +32,34 @@ let AuthController = class AuthController {
     signIn(authCredentialsDto) {
         return this.authService.signIn(authCredentialsDto);
     }
+    test(req) {
+        console.log(req);
+    }
 };
 __decorate([
     common_2.Post('/signup'),
-    __param(0, common_1.Body(common_3.ValidationPipe)),
+    __param(0, common_1.Body(common_5.ValidationPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [auth_credentials_dto_1.AuthCredentialsDto]),
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "signUp", null);
 __decorate([
     common_2.Post('/signin'),
-    __param(0, common_1.Body(common_3.ValidationPipe)),
+    __param(0, common_1.Body(common_5.ValidationPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [auth_credentials_dto_1.AuthCredentialsDto]),
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "signIn", null);
+__decorate([
+    common_2.Post('/test'),
+    common_3.UseGuards(passport_1.AuthGuard()),
+    __param(0, common_4.Req()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], AuthController.prototype, "test", null);
 AuthController = __decorate([
-    common_4.Controller('auth'),
+    common_6.Controller('auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService])
 ], AuthController);
 exports.AuthController = AuthController;
