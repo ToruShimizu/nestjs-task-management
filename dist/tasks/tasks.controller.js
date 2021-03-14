@@ -15,8 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TasksController = void 0;
 const common_1 = require("@nestjs/common");
 const common_2 = require("@nestjs/common");
-const common_3 = require("@nestjs/common");
-const passport_1 = require("@nestjs/passport");
 const create_task_dto_1 = require("./dto/create-task.dto");
 const get_tasks_filter_dto_1 = require("./dto/get-tasks-filter.dto");
 const task_status_validation_pipe_1 = require("./pipes/task-status-validation.pipe");
@@ -43,45 +41,44 @@ let TasksController = class TasksController {
     }
 };
 __decorate([
-    common_3.Get(),
-    __param(0, common_3.Query(common_3.ValidationPipe)),
+    common_2.Get(),
+    __param(0, common_2.Query(common_2.ValidationPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [get_tasks_filter_dto_1.GetTasksFilterDto]),
     __metadata("design:returntype", void 0)
 ], TasksController.prototype, "getTasks", null);
 __decorate([
-    common_3.Get('/:id'),
-    __param(0, common_3.Param('id', common_1.ParseIntPipe)),
+    common_2.Get('/:id'),
+    __param(0, common_2.Param('id', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], TasksController.prototype, "getTaskById", null);
 __decorate([
-    common_3.Post(),
-    common_3.UsePipes(common_3.ValidationPipe),
-    __param(0, common_3.Body()),
+    common_2.Post(),
+    common_2.UsePipes(common_2.ValidationPipe),
+    __param(0, common_2.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_task_dto_1.CreateTaskDto]),
     __metadata("design:returntype", Promise)
 ], TasksController.prototype, "createTask", null);
 __decorate([
-    common_3.Delete('/:id'),
-    __param(0, common_3.Param('id', common_1.ParseIntPipe)),
+    common_2.Delete('/:id'),
+    __param(0, common_2.Param('id', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], TasksController.prototype, "deleteTask", null);
 __decorate([
-    common_3.Patch('/:id/status'),
-    __param(0, common_3.Param('id', common_1.ParseIntPipe)),
-    __param(1, common_3.Body('status', task_status_validation_pipe_1.TaskStatusValidationPipe)),
+    common_2.Patch('/:id/status'),
+    __param(0, common_2.Param('id', common_1.ParseIntPipe)),
+    __param(1, common_2.Body('status', task_status_validation_pipe_1.TaskStatusValidationPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, String]),
     __metadata("design:returntype", Promise)
 ], TasksController.prototype, "updateTaskStatus", null);
 TasksController = __decorate([
-    common_3.Controller('tasks'),
-    common_2.UseGuards(passport_1.AuthGuard),
+    common_2.Controller('tasks'),
     __metadata("design:paramtypes", [tasks_service_1.TasksService])
 ], TasksController);
 exports.TasksController = TasksController;
